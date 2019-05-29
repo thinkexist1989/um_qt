@@ -55,7 +55,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)\$(Platform)\$(Configuration)</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)\$(Platform)\$(Configuration)\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">um_qt</TargetName>
     <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</IgnoreImportLibrary>
@@ -75,7 +75,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>.\GeneratedFiles\$(ConfigurationName);.\GeneratedFiles;.;..\..\..\..\QT\QT5.12.2\5.12.2\MSVC2017_64\include;..\..\..\..\QT\QT5.12.2\5.12.2\MSVC2017_64\include\QtWidgets;..\..\..\..\QT\QT5.12.2\5.12.2\MSVC2017_64\include\QtGui;..\..\..\..\QT\QT5.12.2\5.12.2\MSVC2017_64\include\QtANGLE;..\..\..\..\QT\QT5.12.2\5.12.2\MSVC2017_64\include\QtCore;release;C:\VulkanSDK\1.0.51.0\include;..\..\..\..\QT\QT5.12.2\5.12.2\MSVC2017_64\mkspecs\win32-msvc;$(ProjectDir)\DynamixelSDK\include\dynamixel_sdk;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\GeneratedFiles\$(ConfigurationName);.\GeneratedFiles;.;$(QTDIR)\include;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtCore;release;C:\VulkanSDK\1.0.51.0\include;$(QTDIR)\mkspecs\win32-msvc;$(ProjectDir)\DynamixelSDK\include\dynamixel_sdk;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>-Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding -Zc:__cplusplus -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 %(AdditionalOptions)</AdditionalOptions>
       <AssemblerListingLocation>release\</AssemblerListingLocation>
       <BrowseInformation>false</BrowseInformation>
@@ -118,7 +118,7 @@
       <QTDIR>C:\QT\QT5.12.2\5.12.2\MSVC2017_64</QTDIR>
       <InputFile>%(FullPath)</InputFile>
       <OutputFile>$(Configuration)\moc_%(Filename).cpp</OutputFile>
-      <IncludePath>.\GeneratedFiles\$(ConfigurationName);.\GeneratedFiles;.;..\..\..\..\QT\QT5.12.2\5.12.2\MSVC2017_64\include;..\..\..\..\QT\QT5.12.2\5.12.2\MSVC2017_64\include\QtWidgets;..\..\..\..\QT\QT5.12.2\5.12.2\MSVC2017_64\include\QtGui;..\..\..\..\QT\QT5.12.2\5.12.2\MSVC2017_64\include\QtANGLE;..\..\..\..\QT\QT5.12.2\5.12.2\MSVC2017_64\include\QtCore;release;C:\VulkanSDK\1.0.51.0\include;..\..\..\..\QT\QT5.12.2\5.12.2\MSVC2017_64\mkspecs\win32-msvc;$(ProjectDir)\DynamixelSDK\include\dynamixel_sdk;%(AdditionalIncludeDirectories)</IncludePath>
+      <IncludePath>.\GeneratedFiles\$(ConfigurationName);.\GeneratedFiles;.;$(QTDIR)\include;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtCore;release;C:\VulkanSDK\1.0.51.0\include;$(QTDIR)\mkspecs\win32-msvc;$(ProjectDir)\DynamixelSDK\include\dynamixel_sdk;%(AdditionalIncludeDirectories)</IncludePath>
       <Define>UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QT_DEPRECATED_WARNINGS;QT_NO_DEBUG;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB</Define>
       <CompilerFlavor>msvc</CompilerFlavor>
       <Include>./$(Configuration)/moc_predefs.h</Include>
@@ -134,7 +134,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>.\GeneratedFiles\$(ConfigurationName);.\GeneratedFiles;.;..\..\..\..\QT\QT5.12.2\5.12.2\MSVC2017_64\include;..\..\..\..\QT\QT5.12.2\5.12.2\MSVC2017_64\include\QtWidgets;..\..\..\..\QT\QT5.12.2\5.12.2\MSVC2017_64\include\QtGui;..\..\..\..\QT\QT5.12.2\5.12.2\MSVC2017_64\include\QtANGLE;..\..\..\..\QT\QT5.12.2\5.12.2\MSVC2017_64\include\QtCore;debug;C:\VulkanSDK\1.0.51.0\include;..\..\..\..\QT\QT5.12.2\5.12.2\MSVC2017_64\mkspecs\win32-msvc;$(ProjectDir)\DynamixelSDK\include\dynamixel_sdk;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\GeneratedFiles\$(ConfigurationName);.\GeneratedFiles;.;$(QTDIR)\include;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtCore;debug;C:\VulkanSDK\1.0.51.0\include;$(QTDIR)\mkspecs\win32-msvc;$(ProjectDir)\DynamixelSDK\include\dynamixel_sdk;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>-Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding -Zc:__cplusplus -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 %(AdditionalOptions)</AdditionalOptions>
       <AssemblerListingLocation>debug\</AssemblerListingLocation>
       <BrowseInformation>false</BrowseInformation>
@@ -176,7 +176,7 @@
       <QTDIR>C:\QT\QT5.12.2\5.12.2\MSVC2017_64</QTDIR>
       <InputFile>%(FullPath)</InputFile>
       <OutputFile>$(Configuration)\moc_%(Filename).cpp</OutputFile>
-      <IncludePath>.\GeneratedFiles\$(ConfigurationName);.\GeneratedFiles;.;..\..\..\..\QT\QT5.12.2\5.12.2\MSVC2017_64\include;..\..\..\..\QT\QT5.12.2\5.12.2\MSVC2017_64\include\QtWidgets;..\..\..\..\QT\QT5.12.2\5.12.2\MSVC2017_64\include\QtGui;..\..\..\..\QT\QT5.12.2\5.12.2\MSVC2017_64\include\QtANGLE;..\..\..\..\QT\QT5.12.2\5.12.2\MSVC2017_64\include\QtCore;debug;C:\VulkanSDK\1.0.51.0\include;..\..\..\..\QT\QT5.12.2\5.12.2\MSVC2017_64\mkspecs\win32-msvc;$(ProjectDir)\DynamixelSDK\include\dynamixel_sdk;%(AdditionalIncludeDirectories)</IncludePath>
+      <IncludePath>.\GeneratedFiles\$(ConfigurationName);.\GeneratedFiles;.;$(QTDIR)\include;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtCore;debug;C:\VulkanSDK\1.0.51.0\include;$(QTDIR)\mkspecs\win32-msvc;$(ProjectDir)\DynamixelSDK\include\dynamixel_sdk;%(AdditionalIncludeDirectories)</IncludePath>
       <Define>UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QT_DEPRECATED_WARNINGS;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB</Define>
       <CompilerFlavor>msvc</CompilerFlavor>
       <Include>./$(Configuration)/moc_predefs.h</Include>
