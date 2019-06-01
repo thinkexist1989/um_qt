@@ -54,8 +54,26 @@
     <ClCompile Include="settingsdlg.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="fstl\backdrop.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fstl\canvas.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fstl\glmesh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="globalvar.cpp">
-      <Filter>Generated Files</Filter>
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fstl\loader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fstl\mesh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fstl\window.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -63,6 +81,15 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="settingsdlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="fstl\canvas.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="fstl\loader.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="fstl\window.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
@@ -89,13 +116,54 @@
     <ClInclude Include="jointcontrol.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="fstl\backdrop.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="fstl\glmesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="globalvar.h">
-      <Filter>Generated Files</Filter>
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="fstl\mesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="fstl\vertex.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="Resource.qrc">
       <Filter>Resource Files</Filter>
     </QtRcc>
+    <QtRcc Include="fstl\gl\gl.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
+    <QtRcc Include="fstl\qt\qt.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="fstl\gl\mesh.frag">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="fstl\gl\mesh.vert">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="fstl\gl\mesh_wireframe.frag">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="fstl\gl\quad.frag">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="fstl\gl\quad.vert">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="fstl\gl\sphere.stl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="fstl\qt\style.qss">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

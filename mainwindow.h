@@ -9,6 +9,8 @@
 #include "dynamixel_sdk.h"
 #include "globalvar.h"
 
+#include "window.h"
+
 namespace Ui {
 	class MainWindow;
 }
@@ -32,6 +34,8 @@ public:
 	dynamixel::PortHandler *portHandler;
 
 	SettingsDlg *m_psettingsdlg;
+
+	Window* glwnd;
 
 private:
 	Ui::MainWindow *ui;

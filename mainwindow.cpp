@@ -14,10 +14,18 @@ MainWindow::MainWindow(QWidget *parent) :
 
 	m_psettingsdlg = new SettingsDlg(this); //初始化设置对话框
 
+	glwnd = new Window(this);
+
+	ui->glLayout->addWidget(glwnd);
+
+	glwnd->load_stl("D:\\Git_Proj\\um_qt\\fstl\\gl\\um_stl\\all.STL");
+
 	QTimer *timer = new QTimer(this);
 	connect(timer, SIGNAL(timeout()), this, SLOT(handle_time_out()));
 	isUsed = false;
 	timer->start(100);
+
+	//statusBar()->setVisible(false);
 
 }
 
