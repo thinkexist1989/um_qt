@@ -18,14 +18,13 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QTextBrowser>
-#include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_SettingsDlg
 {
 public:
-    QWidget *layoutWidget_2;
+    QGridLayout *gridLayout;
     QGridLayout *gridLayout_4;
     QLabel *label_4;
     QComboBox *portNameBox;
@@ -40,15 +39,14 @@ public:
         if (SettingsDlg->objectName().isEmpty())
             SettingsDlg->setObjectName(QString::fromUtf8("SettingsDlg"));
         SettingsDlg->resize(400, 300);
-        layoutWidget_2 = new QWidget(SettingsDlg);
-        layoutWidget_2->setObjectName(QString::fromUtf8("layoutWidget_2"));
-        layoutWidget_2->setGeometry(QRect(10, 10, 381, 45));
-        gridLayout_4 = new QGridLayout(layoutWidget_2);
+        gridLayout = new QGridLayout(SettingsDlg);
+        gridLayout->setSpacing(6);
+        gridLayout->setContentsMargins(11, 11, 11, 11);
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        gridLayout_4 = new QGridLayout();
         gridLayout_4->setSpacing(6);
-        gridLayout_4->setContentsMargins(11, 11, 11, 11);
         gridLayout_4->setObjectName(QString::fromUtf8("gridLayout_4"));
-        gridLayout_4->setContentsMargins(0, 0, 0, 0);
-        label_4 = new QLabel(layoutWidget_2);
+        label_4 = new QLabel(SettingsDlg);
         label_4->setObjectName(QString::fromUtf8("label_4"));
         QFont font;
         font.setFamily(QString::fromUtf8("Times New Roman"));
@@ -59,7 +57,7 @@ public:
 
         gridLayout_4->addWidget(label_4, 0, 0, 1, 1);
 
-        portNameBox = new QComboBox(layoutWidget_2);
+        portNameBox = new QComboBox(SettingsDlg);
         portNameBox->setObjectName(QString::fromUtf8("portNameBox"));
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy.setHorizontalStretch(0);
@@ -70,13 +68,13 @@ public:
 
         gridLayout_4->addWidget(portNameBox, 1, 0, 1, 1);
 
-        label_5 = new QLabel(layoutWidget_2);
+        label_5 = new QLabel(SettingsDlg);
         label_5->setObjectName(QString::fromUtf8("label_5"));
         label_5->setFont(font);
 
         gridLayout_4->addWidget(label_5, 0, 1, 1, 1);
 
-        baudBox = new QComboBox(layoutWidget_2);
+        baudBox = new QComboBox(SettingsDlg);
         baudBox->addItem(QString());
         baudBox->addItem(QString());
         baudBox->addItem(QString());
@@ -88,7 +86,7 @@ public:
 
         gridLayout_4->addWidget(baudBox, 1, 1, 1, 1);
 
-        startBtn = new QPushButton(layoutWidget_2);
+        startBtn = new QPushButton(SettingsDlg);
         startBtn->setObjectName(QString::fromUtf8("startBtn"));
         sizePolicy.setHeightForWidth(startBtn->sizePolicy().hasHeightForWidth());
         startBtn->setSizePolicy(sizePolicy);
@@ -99,7 +97,7 @@ public:
 
         gridLayout_4->addWidget(startBtn, 0, 2, 2, 1);
 
-        stopBtn = new QPushButton(layoutWidget_2);
+        stopBtn = new QPushButton(SettingsDlg);
         stopBtn->setObjectName(QString::fromUtf8("stopBtn"));
         sizePolicy.setHeightForWidth(stopBtn->sizePolicy().hasHeightForWidth());
         stopBtn->setSizePolicy(sizePolicy);
@@ -114,9 +112,14 @@ public:
         gridLayout_4->setColumnStretch(1, 2);
         gridLayout_4->setColumnStretch(2, 1);
         gridLayout_4->setColumnStretch(3, 1);
+
+        gridLayout->addLayout(gridLayout_4, 0, 0, 1, 1);
+
         infoBrowser = new QTextBrowser(SettingsDlg);
         infoBrowser->setObjectName(QString::fromUtf8("infoBrowser"));
-        infoBrowser->setGeometry(QRect(10, 61, 381, 231));
+
+        gridLayout->addWidget(infoBrowser, 1, 0, 1, 1);
+
 
         retranslateUi(SettingsDlg);
 

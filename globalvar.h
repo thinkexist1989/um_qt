@@ -19,5 +19,6 @@ public:
 	static JointControl* Joint3;
 	static JointControl* Joint4;
 	static JointControl* Joint5;
+	static JointControl*  Joints[5];
 };
 

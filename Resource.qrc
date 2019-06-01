@@ -1,10 +1,13 @@
 <RCC>
-    <qresource prefix="/">
-        <file>icons/setting.ico</file>
-        <file>icons/robot_arm.png</file>
-        <file>icons/start.ico</file>
-        <file>icons/stop.ico</file>
-        <file>icons/goalpos.ico</file>
-        <file>icons/loc.ico</file>
-    </qresource>
+  <qresource prefix="/">
+    <file>icons/setting.ico</file>
+    <file>icons/robot_arm.png</file>
+    <file>icons/start.ico</file>
+    <file>icons/stop.ico</file>
+    <file>icons/goalpos.ico</file>
+    <file>icons/loc.ico</file>
+    <file>icons/joint.ico</file>
+    <file>icons/about.ico</file>
+    <file>icons/zs.jpg</file>
+  </qresource>
 </RCC>

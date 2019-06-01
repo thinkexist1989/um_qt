@@ -75,6 +75,12 @@
     <ClCompile Include="fstl\window.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="singlejointcontrldlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="aboutdlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="mainwindow.h">
@@ -90,6 +96,12 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="fstl\window.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="singlejointcontrldlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="aboutdlg.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
@@ -109,6 +121,12 @@
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="settingsdlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="singlejointcontrldlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="aboutdlg.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>

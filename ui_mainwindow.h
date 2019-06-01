@@ -14,6 +14,7 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGridLayout>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
@@ -28,18 +29,22 @@ class Ui_MainWindow
 {
 public:
     QAction *actionSettings;
+    QAction *actionSingleJointControl;
+    QAction *actionAbout;
     QWidget *centralWidget;
-    QGridLayout *gridLayout_4;
     QGridLayout *gridLayout;
+    QHBoxLayout *horizontalLayout_4;
+    QHBoxLayout *horizontalLayout_3;
+    QLabel *label_4;
     QLabel *label_2;
     QSpinBox *idSpinBox;
-    QGridLayout *gridLayout_2;
+    QHBoxLayout *horizontalLayout_2;
+    QLabel *label_3;
+    QSpinBox *CurrentPosSpinBox;
+    QHBoxLayout *horizontalLayout;
     QLabel *label;
     QSpinBox *GoalPosSpinBox;
     QPushButton *SetPosBtn;
-    QGridLayout *gridLayout_3;
-    QSpinBox *CurrentPosSpinBox;
-    QLabel *label_3;
     QGridLayout *glLayout;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -48,7 +53,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(657, 504);
+        MainWindow->resize(693, 520);
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/icons/robot_arm.png"), QSize(), QIcon::Normal, QIcon::Off);
         MainWindow->setWindowIcon(icon);
@@ -63,135 +68,165 @@ public:
             icon1.addFile(QString::fromUtf8(":/icons/setting.ico"), QSize(), QIcon::Normal, QIcon::On);
         }
         actionSettings->setIcon(icon1);
+        actionSingleJointControl = new QAction(MainWindow);
+        actionSingleJointControl->setObjectName(QString::fromUtf8("actionSingleJointControl"));
+        QIcon icon2;
+        iconThemeName = QString::fromUtf8(":/icons/joint.ico");
+        if (QIcon::hasThemeIcon(iconThemeName)) {
+            icon2 = QIcon::fromTheme(iconThemeName);
+        } else {
+            icon2.addFile(QString::fromUtf8(":/icons/joint.ico"), QSize(), QIcon::Normal, QIcon::Off);
+            icon2.addFile(QString::fromUtf8(":/icons/setting.ico"), QSize(), QIcon::Normal, QIcon::On);
+        }
+        actionSingleJointControl->setIcon(icon2);
+        actionAbout = new QAction(MainWindow);
+        actionAbout->setObjectName(QString::fromUtf8("actionAbout"));
+        QIcon icon3;
+        icon3.addFile(QString::fromUtf8(":/icons/about.ico"), QSize(), QIcon::Normal, QIcon::Off);
+        icon3.addFile(QString::fromUtf8(":/icons/about.ico"), QSize(), QIcon::Normal, QIcon::On);
+        actionAbout->setIcon(icon3);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
-        gridLayout_4 = new QGridLayout(centralWidget);
-        gridLayout_4->setSpacing(6);
-        gridLayout_4->setContentsMargins(11, 11, 11, 11);
-        gridLayout_4->setObjectName(QString::fromUtf8("gridLayout_4"));
-        gridLayout = new QGridLayout();
+        gridLayout = new QGridLayout(centralWidget);
         gridLayout->setSpacing(6);
+        gridLayout->setContentsMargins(11, 11, 11, 11);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-        label_2 = new QLabel(centralWidget);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
+        horizontalLayout_4 = new QHBoxLayout();
+        horizontalLayout_4->setSpacing(6);
+        horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
+        horizontalLayout_3 = new QHBoxLayout();
+        horizontalLayout_3->setSpacing(6);
+        horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
+        label_4 = new QLabel(centralWidget);
+        label_4->setObjectName(QString::fromUtf8("label_4"));
         QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(label_2->sizePolicy().hasHeightForWidth());
-        label_2->setSizePolicy(sizePolicy);
+        sizePolicy.setHeightForWidth(label_4->sizePolicy().hasHeightForWidth());
+        label_4->setSizePolicy(sizePolicy);
         QFont font;
         font.setFamily(QString::fromUtf8("Times New Roman"));
         font.setPointSize(12);
         font.setBold(true);
+        font.setItalic(false);
+        font.setUnderline(true);
         font.setWeight(75);
-        label_2->setFont(font);
+        label_4->setFont(font);
+        label_4->setFrameShape(QFrame::WinPanel);
+        label_4->setFrameShadow(QFrame::Plain);
+
+        horizontalLayout_3->addWidget(label_4);
+
+        label_2 = new QLabel(centralWidget);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+        sizePolicy.setHeightForWidth(label_2->sizePolicy().hasHeightForWidth());
+        label_2->setSizePolicy(sizePolicy);
+        QFont font1;
+        font1.setFamily(QString::fromUtf8("Times New Roman"));
+        font1.setPointSize(12);
+        font1.setBold(true);
+        font1.setWeight(75);
+        label_2->setFont(font1);
         label_2->setScaledContents(true);
         label_2->setAlignment(Qt::AlignCenter);
         label_2->setWordWrap(true);
 
-        gridLayout->addWidget(label_2, 0, 0, 1, 1);
+        horizontalLayout_3->addWidget(label_2);
 
         idSpinBox = new QSpinBox(centralWidget);
         idSpinBox->setObjectName(QString::fromUtf8("idSpinBox"));
         sizePolicy.setHeightForWidth(idSpinBox->sizePolicy().hasHeightForWidth());
         idSpinBox->setSizePolicy(sizePolicy);
-        idSpinBox->setFont(font);
+        idSpinBox->setFont(font1);
         idSpinBox->setMinimum(1);
-        idSpinBox->setMaximum(6);
+        idSpinBox->setMaximum(5);
 
-        gridLayout->addWidget(idSpinBox, 0, 1, 1, 1);
+        horizontalLayout_3->addWidget(idSpinBox);
 
-        gridLayout->setColumnStretch(0, 2);
-        gridLayout->setColumnStretch(1, 3);
 
-        gridLayout_4->addLayout(gridLayout, 0, 0, 1, 1);
+        horizontalLayout_4->addLayout(horizontalLayout_3);
 
-        gridLayout_2 = new QGridLayout();
-        gridLayout_2->setSpacing(6);
-        gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setSpacing(6);
+        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
+        label_3 = new QLabel(centralWidget);
+        label_3->setObjectName(QString::fromUtf8("label_3"));
+        label_3->setFont(font1);
+        label_3->setWordWrap(true);
+
+        horizontalLayout_2->addWidget(label_3);
+
+        CurrentPosSpinBox = new QSpinBox(centralWidget);
+        CurrentPosSpinBox->setObjectName(QString::fromUtf8("CurrentPosSpinBox"));
+        QSizePolicy sizePolicy1(QSizePolicy::Fixed, QSizePolicy::Preferred);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(CurrentPosSpinBox->sizePolicy().hasHeightForWidth());
+        CurrentPosSpinBox->setSizePolicy(sizePolicy1);
+        CurrentPosSpinBox->setFont(font1);
+        CurrentPosSpinBox->setMaximum(4095);
+
+        horizontalLayout_2->addWidget(CurrentPosSpinBox);
+
+
+        horizontalLayout_4->addLayout(horizontalLayout_2);
+
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setSpacing(6);
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         label = new QLabel(centralWidget);
         label->setObjectName(QString::fromUtf8("label"));
         sizePolicy.setHeightForWidth(label->sizePolicy().hasHeightForWidth());
         label->setSizePolicy(sizePolicy);
-        label->setFont(font);
+        label->setFont(font1);
         label->setScaledContents(false);
         label->setWordWrap(true);
 
-        gridLayout_2->addWidget(label, 0, 0, 1, 1);
+        horizontalLayout->addWidget(label);
 
         GoalPosSpinBox = new QSpinBox(centralWidget);
         GoalPosSpinBox->setObjectName(QString::fromUtf8("GoalPosSpinBox"));
-        QSizePolicy sizePolicy1(QSizePolicy::Fixed, QSizePolicy::Expanding);
-        sizePolicy1.setHorizontalStretch(0);
-        sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(GoalPosSpinBox->sizePolicy().hasHeightForWidth());
-        GoalPosSpinBox->setSizePolicy(sizePolicy1);
-        GoalPosSpinBox->setFont(font);
+        QSizePolicy sizePolicy2(QSizePolicy::Fixed, QSizePolicy::Expanding);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(GoalPosSpinBox->sizePolicy().hasHeightForWidth());
+        GoalPosSpinBox->setSizePolicy(sizePolicy2);
+        GoalPosSpinBox->setFont(font1);
         GoalPosSpinBox->setMaximum(4095);
 
-        gridLayout_2->addWidget(GoalPosSpinBox, 0, 1, 1, 1);
+        horizontalLayout->addWidget(GoalPosSpinBox);
 
         SetPosBtn = new QPushButton(centralWidget);
         SetPosBtn->setObjectName(QString::fromUtf8("SetPosBtn"));
         sizePolicy.setHeightForWidth(SetPosBtn->sizePolicy().hasHeightForWidth());
         SetPosBtn->setSizePolicy(sizePolicy);
-        SetPosBtn->setFont(font);
-        QIcon icon2;
-        icon2.addFile(QString::fromUtf8(":/icons/goalpos.ico"), QSize(), QIcon::Normal, QIcon::Off);
-        SetPosBtn->setIcon(icon2);
+        SetPosBtn->setFont(font1);
+        QIcon icon4;
+        icon4.addFile(QString::fromUtf8(":/icons/goalpos.ico"), QSize(), QIcon::Normal, QIcon::Off);
+        SetPosBtn->setIcon(icon4);
         SetPosBtn->setIconSize(QSize(30, 30));
 
-        gridLayout_2->addWidget(SetPosBtn, 0, 2, 1, 1);
+        horizontalLayout->addWidget(SetPosBtn);
 
-        gridLayout_2->setColumnStretch(0, 5);
-        gridLayout_2->setColumnStretch(1, 3);
-        gridLayout_2->setColumnStretch(2, 3);
 
-        gridLayout_4->addLayout(gridLayout_2, 0, 1, 1, 1);
+        horizontalLayout_4->addLayout(horizontalLayout);
 
-        gridLayout_3 = new QGridLayout();
-        gridLayout_3->setSpacing(6);
-        gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
-        CurrentPosSpinBox = new QSpinBox(centralWidget);
-        CurrentPosSpinBox->setObjectName(QString::fromUtf8("CurrentPosSpinBox"));
-        QSizePolicy sizePolicy2(QSizePolicy::Fixed, QSizePolicy::Preferred);
-        sizePolicy2.setHorizontalStretch(0);
-        sizePolicy2.setVerticalStretch(0);
-        sizePolicy2.setHeightForWidth(CurrentPosSpinBox->sizePolicy().hasHeightForWidth());
-        CurrentPosSpinBox->setSizePolicy(sizePolicy2);
-        CurrentPosSpinBox->setFont(font);
-        CurrentPosSpinBox->setMaximum(4095);
 
-        gridLayout_3->addWidget(CurrentPosSpinBox, 0, 1, 1, 1);
-
-        label_3 = new QLabel(centralWidget);
-        label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setFont(font);
-        label_3->setWordWrap(true);
-
-        gridLayout_3->addWidget(label_3, 0, 0, 1, 1);
-
-        gridLayout_3->setColumnStretch(0, 3);
-        gridLayout_3->setColumnStretch(1, 2);
-
-        gridLayout_4->addLayout(gridLayout_3, 0, 2, 1, 1);
+        gridLayout->addLayout(horizontalLayout_4, 0, 0, 1, 1);
 
         glLayout = new QGridLayout();
         glLayout->setSpacing(6);
         glLayout->setObjectName(QString::fromUtf8("glLayout"));
 
-        gridLayout_4->addLayout(glLayout, 1, 0, 1, 3);
+        gridLayout->addLayout(glLayout, 1, 0, 1, 1);
 
-        gridLayout_4->setRowStretch(0, 1);
-        gridLayout_4->setRowStretch(1, 6);
-        gridLayout_4->setColumnStretch(0, 1);
-        gridLayout_4->setColumnStretch(1, 4);
-        gridLayout_4->setColumnStretch(2, 2);
+        gridLayout->setRowStretch(0, 1);
+        gridLayout->setRowStretch(1, 8);
         MainWindow->setCentralWidget(centralWidget);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QString::fromUtf8("mainToolBar"));
         mainToolBar->setMovable(false);
-        mainToolBar->setIconSize(QSize(20, 20));
+        mainToolBar->setIconSize(QSize(50, 50));
         mainToolBar->setFloatable(false);
         MainWindow->addToolBar(Qt::TopToolBarArea, mainToolBar);
         statusBar = new QStatusBar(MainWindow);
@@ -199,6 +234,10 @@ public:
         MainWindow->setStatusBar(statusBar);
 
         mainToolBar->addAction(actionSettings);
+        mainToolBar->addSeparator();
+        mainToolBar->addAction(actionSingleJointControl);
+        mainToolBar->addSeparator();
+        mainToolBar->addAction(actionAbout);
 
         retranslateUi(MainWindow);
 
@@ -212,10 +251,19 @@ public:
 #ifndef QT_NO_TOOLTIP
         actionSettings->setToolTip(QApplication::translate("MainWindow", "start serial port", nullptr));
 #endif // QT_NO_TOOLTIP
+        actionSingleJointControl->setText(QApplication::translate("MainWindow", "START", nullptr));
+#ifndef QT_NO_TOOLTIP
+        actionSingleJointControl->setToolTip(QApplication::translate("MainWindow", "Single Joint Control", nullptr));
+#endif // QT_NO_TOOLTIP
+        actionAbout->setText(QApplication::translate("MainWindow", "START", nullptr));
+#ifndef QT_NO_TOOLTIP
+        actionAbout->setToolTip(QApplication::translate("MainWindow", "About", nullptr));
+#endif // QT_NO_TOOLTIP
+        label_4->setText(QApplication::translate("MainWindow", "JOINT", nullptr));
         label_2->setText(QApplication::translate("MainWindow", "ID", nullptr));
+        label_3->setText(QApplication::translate("MainWindow", "CURRENT POSITION", nullptr));
         label->setText(QApplication::translate("MainWindow", "GOAL POSITION", nullptr));
         SetPosBtn->setText(QApplication::translate("MainWindow", "SET", nullptr));
-        label_3->setText(QApplication::translate("MainWindow", "CURRENT POSITION", nullptr));
     } // retranslateUi
 
 };

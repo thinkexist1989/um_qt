@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 #include "settingsdlg.h"
+#include "singlejointcontrldlg.h"
+#include "aboutdlg.h"
 
 #include "jointcontrol.h"
 
@@ -34,8 +36,12 @@ public:
 	dynamixel::PortHandler *portHandler;
 
 	SettingsDlg *m_psettingsdlg;
+	SingleJointContrlDlg *m_pSJCdlg;
+	AboutDlg *m_aboutdlg;
 
 	Window* glwnd;
+
+	void SetStatusMsg(QString msg);
 
 private:
 	Ui::MainWindow *ui;
@@ -44,6 +50,8 @@ public slots:
 	void on_SetPosBtn_clicked();
 	void handle_time_out();
 	void on_actionSettings_triggered();
+	void on_actionSingleJointControl_triggered();
+	void on_actionAbout_triggered();
 };
 
 #endif // MAINWINDOW_H

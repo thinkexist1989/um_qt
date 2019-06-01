@@ -201,6 +201,7 @@
     </QtRcc>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="aboutdlg.cpp" />
     <ClCompile Include="fstl\backdrop.cpp" />
     <ClCompile Include="fstl\canvas.cpp" />
     <ClCompile Include="fstl\glmesh.cpp" />
@@ -212,6 +213,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mainwindow.cpp" />
     <ClCompile Include="settingsdlg.cpp" />
+    <ClCompile Include="singlejointcontrldlg.cpp" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="mainwindow.h">
@@ -234,6 +236,10 @@
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_predefs.h;%(Outputs)</Outputs>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </CustomBuild>
+    <QtMoc Include="aboutdlg.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\$(ConfigurationName);.\GeneratedFiles;.;$(QTDIR)\include;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtCore;.\debug;C:\VulkanSDK\1.0.51.0\include;$(QTDIR)\mkspecs\win32-msvc;$(ProjectDir)\DynamixelSDK\include\dynamixel_sdk;$(QTDIR)\include\QtSerialPort;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtOpenGLExtensions</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\$(ConfigurationName);.\GeneratedFiles;.;$(QTDIR)\include;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtCore;.\release;C:\VulkanSDK\1.0.51.0\include;$(QTDIR)\mkspecs\win32-msvc;$(ProjectDir)\DynamixelSDK\include\dynamixel_sdk;$(QTDIR)\include\QtSerialPort;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtOpenGLExtensions</IncludePath>
+    </QtMoc>
     <ClInclude Include="fstl\backdrop.h" />
     <QtMoc Include="fstl\canvas.h">
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\$(ConfigurationName);.\GeneratedFiles;.;$(QTDIR)\include;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtCore;.\debug;C:\VulkanSDK\1.0.51.0\include;$(QTDIR)\mkspecs\win32-msvc;$(ProjectDir)\DynamixelSDK\include\dynamixel_sdk;$(QTDIR)\include\QtSerialPort</IncludePath>
@@ -258,12 +264,24 @@
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\$(ConfigurationName);.\GeneratedFiles;.;$(QTDIR)\include;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtCore;.\release;C:\VulkanSDK\1.0.51.0\include;$(QTDIR)\mkspecs\win32-msvc;$(ProjectDir)\DynamixelSDK\include\dynamixel_sdk</IncludePath>
       <Define Condition="'$(Configuration)|$(Platform)'=='Release|x64'">_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QT_DEPRECATED_WARNINGS;QT_NO_DEBUG;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;NDEBUG;%(PreprocessorDefinitions)</Define>
     </QtMoc>
+    <QtMoc Include="singlejointcontrldlg.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\$(ConfigurationName);.\GeneratedFiles;.;$(QTDIR)\include;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtCore;.\debug;C:\VulkanSDK\1.0.51.0\include;$(QTDIR)\mkspecs\win32-msvc;$(ProjectDir)\DynamixelSDK\include\dynamixel_sdk;$(QTDIR)\include\QtSerialPort;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtOpenGLExtensions</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\$(ConfigurationName);.\GeneratedFiles;.;$(QTDIR)\include;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtCore;.\release;C:\VulkanSDK\1.0.51.0\include;$(QTDIR)\mkspecs\win32-msvc;$(ProjectDir)\DynamixelSDK\include\dynamixel_sdk;$(QTDIR)\include\QtSerialPort;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtOpenGLExtensions</IncludePath>
+    </QtMoc>
     <ClInclude Include="ui_mainwindow.h" />
   </ItemGroup>
   <ItemGroup>
+    <QtUic Include="aboutdlg.ui">
+      <OutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\ui_%(Filename).h</OutputFile>
+      <OutputFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\ui_%(Filename).h</OutputFile>
+    </QtUic>
     <QtUic Include="mainwindow.ui">
     </QtUic>
     <QtUic Include="settingsdlg.ui">
+      <OutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\ui_%(Filename).h</OutputFile>
+      <OutputFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\ui_%(Filename).h</OutputFile>
+    </QtUic>
+    <QtUic Include="singlejointcontrldlg.ui">
       <OutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\ui_%(Filename).h</OutputFile>
       <OutputFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\ui_%(Filename).h</OutputFile>
     </QtUic>
