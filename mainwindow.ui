@@ -269,9 +269,9 @@
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionSettings">
    <property name="icon">
-    <iconset theme=":/icons/start.ico" resource="Resource.qrc">
-     <normaloff>:/icons/setting.ico</normaloff>
-     <normalon>:/icons/setting.ico</normalon>:/icons/setting.ico</iconset>
+    <iconset theme=":/icons/settings2.ico" resource="Resource.qrc">
+     <normaloff>:/icons/settings2.ico</normaloff>
+     <normalon>:/icons/settings2.ico</normalon>:/icons/settings2.ico</iconset>
    </property>
    <property name="text">
     <string>START</string>
@@ -282,9 +282,9 @@
   </action>
   <action name="actionSingleJointControl">
    <property name="icon">
-    <iconset theme=":/icons/joint.ico" resource="Resource.qrc">
-     <normaloff>:/icons/joint.ico</normaloff>
-     <normalon>:/icons/setting.ico</normalon>:/icons/joint.ico</iconset>
+    <iconset resource="Resource.qrc">
+     <normaloff>:/icons/tools.ico</normaloff>
+     <normalon>:/icons/tools.ico</normalon>:/icons/tools.ico</iconset>
    </property>
    <property name="text">
     <string>START</string>

@@ -17,7 +17,6 @@
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QSpinBox>
 
 QT_BEGIN_NAMESPACE
@@ -29,7 +28,6 @@ public:
     QHBoxLayout *horizontalLayout_4;
     QHBoxLayout *horizontalLayout;
     QLabel *label_4;
-    QSpacerItem *horizontalSpacer;
     QLabel *label_2;
     QSpinBox *idSpinBox_1;
     QHBoxLayout *horizontalLayout_3;
@@ -42,7 +40,6 @@ public:
     QHBoxLayout *horizontalLayout_5;
     QHBoxLayout *horizontalLayout_6;
     QLabel *label_5;
-    QSpacerItem *horizontalSpacer_2;
     QLabel *label_6;
     QSpinBox *idSpinBox_2;
     QHBoxLayout *horizontalLayout_7;
@@ -55,7 +52,6 @@ public:
     QHBoxLayout *horizontalLayout_9;
     QHBoxLayout *horizontalLayout_10;
     QLabel *label_9;
-    QSpacerItem *horizontalSpacer_3;
     QLabel *label_10;
     QSpinBox *idSpinBox_3;
     QHBoxLayout *horizontalLayout_11;
@@ -68,7 +64,6 @@ public:
     QHBoxLayout *horizontalLayout_13;
     QHBoxLayout *horizontalLayout_14;
     QLabel *label_13;
-    QSpacerItem *horizontalSpacer_4;
     QLabel *label_14;
     QSpinBox *idSpinBox_4;
     QHBoxLayout *horizontalLayout_15;
@@ -81,7 +76,6 @@ public:
     QHBoxLayout *horizontalLayout_17;
     QHBoxLayout *horizontalLayout_18;
     QLabel *label_17;
-    QSpacerItem *horizontalSpacer_5;
     QLabel *label_18;
     QSpinBox *idSpinBox_5;
     QHBoxLayout *horizontalLayout_19;
@@ -132,10 +126,6 @@ public:
         label_4->setFrameShadow(QFrame::Plain);
 
         horizontalLayout->addWidget(label_4);
-
-        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout->addItem(horizontalSpacer);
 
         label_2 = new QLabel(SingleJointContrlDlg);
         label_2->setObjectName(QString::fromUtf8("label_2"));
@@ -245,10 +235,6 @@ public:
 
         horizontalLayout_6->addWidget(label_5);
 
-        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout_6->addItem(horizontalSpacer_2);
-
         label_6 = new QLabel(SingleJointContrlDlg);
         label_6->setObjectName(QString::fromUtf8("label_6"));
         sizePolicy.setHeightForWidth(label_6->sizePolicy().hasHeightForWidth());
@@ -349,10 +335,6 @@ public:
         label_9->setFrameShadow(QFrame::Plain);
 
         horizontalLayout_10->addWidget(label_9);
-
-        horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout_10->addItem(horizontalSpacer_3);
 
         label_10 = new QLabel(SingleJointContrlDlg);
         label_10->setObjectName(QString::fromUtf8("label_10"));
@@ -455,10 +437,6 @@ public:
 
         horizontalLayout_14->addWidget(label_13);
 
-        horizontalSpacer_4 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout_14->addItem(horizontalSpacer_4);
-
         label_14 = new QLabel(SingleJointContrlDlg);
         label_14->setObjectName(QString::fromUtf8("label_14"));
         sizePolicy.setHeightForWidth(label_14->sizePolicy().hasHeightForWidth());
@@ -559,10 +537,6 @@ public:
         label_17->setFrameShadow(QFrame::Plain);
 
         horizontalLayout_18->addWidget(label_17);
-
-        horizontalSpacer_5 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout_18->addItem(horizontalSpacer_5);
 
         label_18 = new QLabel(SingleJointContrlDlg);
         label_18->setObjectName(QString::fromUtf8("label_18"));

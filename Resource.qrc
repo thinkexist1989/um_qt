@@ -9,5 +9,7 @@
     <file>icons/joint.ico</file>
     <file>icons/about.ico</file>
     <file>icons/zs.jpg</file>
+    <file>icons/settings2.ico</file>
+    <file>icons/tools.ico</file>
   </qresource>
 </RCC>

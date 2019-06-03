@@ -60,24 +60,19 @@ public:
         actionSettings = new QAction(MainWindow);
         actionSettings->setObjectName(QString::fromUtf8("actionSettings"));
         QIcon icon1;
-        QString iconThemeName = QString::fromUtf8(":/icons/start.ico");
+        QString iconThemeName = QString::fromUtf8(":/icons/settings2.ico");
         if (QIcon::hasThemeIcon(iconThemeName)) {
             icon1 = QIcon::fromTheme(iconThemeName);
         } else {
-            icon1.addFile(QString::fromUtf8(":/icons/setting.ico"), QSize(), QIcon::Normal, QIcon::Off);
-            icon1.addFile(QString::fromUtf8(":/icons/setting.ico"), QSize(), QIcon::Normal, QIcon::On);
+            icon1.addFile(QString::fromUtf8(":/icons/settings2.ico"), QSize(), QIcon::Normal, QIcon::Off);
+            icon1.addFile(QString::fromUtf8(":/icons/settings2.ico"), QSize(), QIcon::Normal, QIcon::On);
         }
         actionSettings->setIcon(icon1);
         actionSingleJointControl = new QAction(MainWindow);
         actionSingleJointControl->setObjectName(QString::fromUtf8("actionSingleJointControl"));
         QIcon icon2;
-        iconThemeName = QString::fromUtf8(":/icons/joint.ico");
-        if (QIcon::hasThemeIcon(iconThemeName)) {
-            icon2 = QIcon::fromTheme(iconThemeName);
-        } else {
-            icon2.addFile(QString::fromUtf8(":/icons/joint.ico"), QSize(), QIcon::Normal, QIcon::Off);
-            icon2.addFile(QString::fromUtf8(":/icons/setting.ico"), QSize(), QIcon::Normal, QIcon::On);
-        }
+        icon2.addFile(QString::fromUtf8(":/icons/tools.ico"), QSize(), QIcon::Normal, QIcon::Off);
+        icon2.addFile(QString::fromUtf8(":/icons/tools.ico"), QSize(), QIcon::Normal, QIcon::On);
         actionSingleJointControl->setIcon(icon2);
         actionAbout = new QAction(MainWindow);
         actionAbout->setObjectName(QString::fromUtf8("actionAbout"));

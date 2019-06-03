@@ -23,7 +23,7 @@ MainWindow::MainWindow(QWidget *parent) :
 	ui->glLayout->addWidget(glwnd);
 
 	glwnd->load_stl("D:\\Git_Proj\\um_qt\\fstl\\gl\\um_stl\\all.STL");
-
+	//glwnd->load_stl("all.STL");
 	QTimer *timer = new QTimer(this);
 	connect(timer, SIGNAL(timeout()), this, SLOT(handle_time_out()));
 	isUsed = false;
