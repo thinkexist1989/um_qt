@@ -14,6 +14,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
 	m_psettingsdlg = new SettingsDlg(this); //初始化设置对话框
 	m_pSJCdlg = new SingleJointContrlDlg(this); //初始化单关节控制对话框
+	m_teachdlg = new TeachDlg(this);
 	m_aboutdlg = new AboutDlg(this);
 	m_pSJCdlg->resize(800, 500);
 	m_aboutdlg->resize(670, 500);
@@ -22,7 +23,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
 	ui->glLayout->addWidget(glwnd);
 
-	glwnd->load_stl("D:\\Git_Proj\\um_qt\\fstl\\gl\\um_stl\\all.STL");
+	glwnd->load_stl("fstl\\gl\\um_stl\\all.STL");
 	//glwnd->load_stl("all.STL");
 	QTimer *timer = new QTimer(this);
 	connect(timer, SIGNAL(timeout()), this, SLOT(handle_time_out()));
@@ -75,4 +76,10 @@ void MainWindow::on_actionAbout_triggered()
 {
 	SetStatusMsg("Open About Dialog");
 	m_aboutdlg->show();
+}
+
+void MainWindow::on_actionTeach_triggered()
+{
+	SetStatusMsg("Open Teach Programming Dialog");
+	m_teachdlg->show();
 }

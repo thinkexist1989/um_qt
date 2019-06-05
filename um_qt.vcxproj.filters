@@ -81,6 +81,9 @@
     <ClCompile Include="aboutdlg.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="teachdlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="mainwindow.h">
@@ -102,6 +105,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="aboutdlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="teachdlg.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
@@ -127,6 +133,9 @@
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="aboutdlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="teachdlg.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>

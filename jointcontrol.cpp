@@ -35,6 +35,13 @@ bool JointControl::SetBaudRate(int baud)
 	return bBaudOK;
 }
 
+int JointControl::SetOperatingMode(uint8_t mode)
+{
+	if (bPortOpened)
+		m_comm_result = packetHandler->write1ByteTxRx(portHandler, m_ID, ADDR_PRO_OPERATING_MODE, VELOCITY, &m_dxl_error);
+	return m_comm_result;
+}
+
 int JointControl::EnableJointTorque()
 {
 	if (bPortOpened)

@@ -11,6 +11,8 @@
 #define ADDR_PRO_GOAL_POSITION          116
 #define ADDR_PRO_PRESENT_POSITION       132
 
+#define ADDR_PRO_OPERATING_MODE			11
+
 // Protocol version
 #define PROTOCOL_VERSION                2.0                 // See which protocol version is used in the Dynamixel
 
@@ -27,6 +29,14 @@
 #define DXL_MOVING_STATUS_THRESHOLD     20                  // Dynamixel moving status threshold
 
 #define ESC_ASCII_VALUE                 0x1b
+
+
+// Operating Mode
+#define CURRENT 0x00
+#define VELOCITY 0x01
+#define POSITION 0x03
+#define EXT_POSITION 0x04
+
 
 
 class JointControl
@@ -51,6 +61,7 @@ private:
 	uint8_t m_dxl_error;     // Dynamixel error
 	dynamixel::PacketHandler *packetHandler; //Êý¾Ý°ü¾ä±ú
 public:
+	int SetOperatingMode(uint8_t mode);
 	int EnableJointTorque();
 	int SetGoalPostion(int goal);
 	int GetCurrentPosition(int* pCurrentPos);

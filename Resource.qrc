@@ -11,5 +11,7 @@
     <file>icons/zs.jpg</file>
     <file>icons/settings2.ico</file>
     <file>icons/tools.ico</file>
+    <file>icons/planning.ico</file>
+    <file>icons/file.ico</file>
   </qresource>
 </RCC>

@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "settingsdlg.h"
 #include "singlejointcontrldlg.h"
+#include "teachdlg.h"
 #include "aboutdlg.h"
 
 #include "jointcontrol.h"
@@ -37,6 +38,7 @@ public:
 
 	SettingsDlg *m_psettingsdlg;
 	SingleJointContrlDlg *m_pSJCdlg;
+	TeachDlg *m_teachdlg;
 	AboutDlg *m_aboutdlg;
 
 	Window* glwnd;
@@ -52,6 +54,7 @@ public slots:
 	void on_actionSettings_triggered();
 	void on_actionSingleJointControl_triggered();
 	void on_actionAbout_triggered();
+	void on_actionTeach_triggered();
 };
 
 #endif // MAINWINDOW_H

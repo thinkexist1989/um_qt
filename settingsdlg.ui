@@ -158,7 +158,13 @@
     </layout>
    </item>
    <item row="1" column="0">
-    <widget class="QTextBrowser" name="infoBrowser"/>
+    <widget class="QTextBrowser" name="infoBrowser">
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+      </font>
+     </property>
+    </widget>
    </item>
   </layout>
  </widget>

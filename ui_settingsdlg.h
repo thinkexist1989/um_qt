@@ -117,6 +117,9 @@ public:
 
         infoBrowser = new QTextBrowser(SettingsDlg);
         infoBrowser->setObjectName(QString::fromUtf8("infoBrowser"));
+        QFont font1;
+        font1.setFamily(QString::fromUtf8("Times New Roman"));
+        infoBrowser->setFont(font1);
 
         gridLayout->addWidget(infoBrowser, 1, 0, 1, 1);
 

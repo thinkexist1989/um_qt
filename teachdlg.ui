@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TeachDlg</class>
+ <widget class="QDialog" name="TeachDlg">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>692</width>
+    <height>436</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>Times New Roman</family>
+    <pointsize>12</pointsize>
+    <weight>75</weight>
+    <bold>true</bold>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Teaching Dialog</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_2">
+   <item row="0" column="0">
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0">
+      <widget class="QPushButton" name="csvBtn">
+       <property name="text">
+        <string>OPEN CSV FILE</string>
+       </property>
+       <property name="icon">
+        <iconset resource="Resource.qrc">
+         <normaloff>:/icons/file.ico</normaloff>:/icons/file.ico</iconset>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QPushButton" name="startBtn">
+       <property name="text">
+        <string>EXEC TEACHING</string>
+       </property>
+       <property name="icon">
+        <iconset resource="Resource.qrc">
+         <normaloff>:/icons/start.ico</normaloff>:/icons/start.ico</iconset>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0" colspan="2">
+      <widget class="QTextBrowser" name="infoBrowser">
+       <property name="font">
+        <font>
+         <family>Times New Roman</family>
+         <pointsize>9</pointsize>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="Resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>

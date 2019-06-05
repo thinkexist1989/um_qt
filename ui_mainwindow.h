@@ -31,6 +31,7 @@ public:
     QAction *actionSettings;
     QAction *actionSingleJointControl;
     QAction *actionAbout;
+    QAction *actionTeach;
     QWidget *centralWidget;
     QGridLayout *gridLayout;
     QHBoxLayout *horizontalLayout_4;
@@ -80,6 +81,12 @@ public:
         icon3.addFile(QString::fromUtf8(":/icons/about.ico"), QSize(), QIcon::Normal, QIcon::Off);
         icon3.addFile(QString::fromUtf8(":/icons/about.ico"), QSize(), QIcon::Normal, QIcon::On);
         actionAbout->setIcon(icon3);
+        actionTeach = new QAction(MainWindow);
+        actionTeach->setObjectName(QString::fromUtf8("actionTeach"));
+        QIcon icon4;
+        icon4.addFile(QString::fromUtf8(":/icons/planning.ico"), QSize(), QIcon::Normal, QIcon::Off);
+        icon4.addFile(QString::fromUtf8(":/icons/planning.ico"), QSize(), QIcon::Normal, QIcon::On);
+        actionTeach->setIcon(icon4);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         gridLayout = new QGridLayout(centralWidget);
@@ -196,9 +203,9 @@ public:
         sizePolicy.setHeightForWidth(SetPosBtn->sizePolicy().hasHeightForWidth());
         SetPosBtn->setSizePolicy(sizePolicy);
         SetPosBtn->setFont(font1);
-        QIcon icon4;
-        icon4.addFile(QString::fromUtf8(":/icons/goalpos.ico"), QSize(), QIcon::Normal, QIcon::Off);
-        SetPosBtn->setIcon(icon4);
+        QIcon icon5;
+        icon5.addFile(QString::fromUtf8(":/icons/goalpos.ico"), QSize(), QIcon::Normal, QIcon::Off);
+        SetPosBtn->setIcon(icon5);
         SetPosBtn->setIconSize(QSize(30, 30));
 
         horizontalLayout->addWidget(SetPosBtn);
@@ -232,6 +239,8 @@ public:
         mainToolBar->addSeparator();
         mainToolBar->addAction(actionSingleJointControl);
         mainToolBar->addSeparator();
+        mainToolBar->addAction(actionTeach);
+        mainToolBar->addSeparator();
         mainToolBar->addAction(actionAbout);
 
         retranslateUi(MainWindow);
@@ -253,6 +262,10 @@ public:
         actionAbout->setText(QApplication::translate("MainWindow", "START", nullptr));
 #ifndef QT_NO_TOOLTIP
         actionAbout->setToolTip(QApplication::translate("MainWindow", "About", nullptr));
+#endif // QT_NO_TOOLTIP
+        actionTeach->setText(QApplication::translate("MainWindow", "START", nullptr));
+#ifndef QT_NO_TOOLTIP
+        actionTeach->setToolTip(QApplication::translate("MainWindow", "Teach Programming", nullptr));
 #endif // QT_NO_TOOLTIP
         label_4->setText(QApplication::translate("MainWindow", "JOINT", nullptr));
         label_2->setText(QApplication::translate("MainWindow", "ID", nullptr));

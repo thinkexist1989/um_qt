@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>693</width>
-    <height>520</height>
+    <width>694</width>
+    <height>519</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -264,6 +264,8 @@
    <addaction name="separator"/>
    <addaction name="actionSingleJointControl"/>
    <addaction name="separator"/>
+   <addaction name="actionTeach"/>
+   <addaction name="separator"/>
    <addaction name="actionAbout"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
@@ -304,6 +306,19 @@
    </property>
    <property name="toolTip">
     <string>About</string>
+   </property>
+  </action>
+  <action name="actionTeach">
+   <property name="icon">
+    <iconset resource="Resource.qrc">
+     <normaloff>:/icons/planning.ico</normaloff>
+     <normalon>:/icons/planning.ico</normalon>:/icons/planning.ico</iconset>
+   </property>
+   <property name="text">
+    <string>START</string>
+   </property>
+   <property name="toolTip">
+    <string>Teach Programming</string>
    </property>
   </action>
  </widget>
