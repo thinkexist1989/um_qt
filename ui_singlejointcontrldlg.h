@@ -100,7 +100,8 @@ public:
         sizePolicy.setHeightForWidth(GoalPosSpinBox_1->sizePolicy().hasHeightForWidth());
         GoalPosSpinBox_1->setSizePolicy(sizePolicy);
         GoalPosSpinBox_1->setFont(font);
-        GoalPosSpinBox_1->setMaximum(4095);
+        GoalPosSpinBox_1->setMinimum(-16384);
+        GoalPosSpinBox_1->setMaximum(16384);
 
         gridLayout->addWidget(GoalPosSpinBox_1, 1, 3, 1, 1);
 
@@ -109,7 +110,8 @@ public:
         sizePolicy.setHeightForWidth(GoalPosSpinBox_5->sizePolicy().hasHeightForWidth());
         GoalPosSpinBox_5->setSizePolicy(sizePolicy);
         GoalPosSpinBox_5->setFont(font);
-        GoalPosSpinBox_5->setMaximum(4095);
+        GoalPosSpinBox_5->setMinimum(700);
+        GoalPosSpinBox_5->setMaximum(2500);
 
         gridLayout->addWidget(GoalPosSpinBox_5, 5, 3, 1, 1);
 
@@ -337,7 +339,8 @@ public:
         sizePolicy.setHeightForWidth(GoalPosSpinBox_4->sizePolicy().hasHeightForWidth());
         GoalPosSpinBox_4->setSizePolicy(sizePolicy);
         GoalPosSpinBox_4->setFont(font);
-        GoalPosSpinBox_4->setMaximum(4095);
+        GoalPosSpinBox_4->setMinimum(100);
+        GoalPosSpinBox_4->setMaximum(1800);
 
         gridLayout->addWidget(GoalPosSpinBox_4, 4, 3, 1, 1);
 

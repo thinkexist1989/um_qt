@@ -23,4 +23,5 @@ private:
 
 public slots:
 	void onSerialCtrl(int id);
+	void on_refreshBtn_clicked();
 };

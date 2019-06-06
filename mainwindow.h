@@ -1,3 +1,4 @@
+#pragma once
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
@@ -16,6 +17,8 @@
 #include "window.h"
 
 #include "pollthread.h"
+
+extern PollThread *m_pthread;
 
 namespace Ui {
 	class MainWindow;
@@ -45,7 +48,7 @@ public:
 	AboutDlg *m_aboutdlg;
 	SwitchModeDlg *m_smdlg;
 
-	PollThread *m_pthread;
+	//PollThread *m_pthread;
 
 	Window* glwnd;
 

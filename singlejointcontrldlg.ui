@@ -80,8 +80,11 @@
        <bold>true</bold>
       </font>
      </property>
+     <property name="minimum">
+      <number>-16384</number>
+     </property>
      <property name="maximum">
-      <number>4095</number>
+      <number>16384</number>
      </property>
     </widget>
    </item>
@@ -101,8 +104,11 @@
        <bold>true</bold>
       </font>
      </property>
+     <property name="minimum">
+      <number>700</number>
+     </property>
      <property name="maximum">
-      <number>4095</number>
+      <number>2500</number>
      </property>
     </widget>
    </item>
@@ -704,8 +710,11 @@
        <bold>true</bold>
       </font>
      </property>
+     <property name="minimum">
+      <number>100</number>
+     </property>
      <property name="maximum">
-      <number>4095</number>
+      <number>1800</number>
      </property>
     </widget>
    </item>

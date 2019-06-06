@@ -172,7 +172,8 @@ public:
         sizePolicy1.setHeightForWidth(CurrentPosSpinBox->sizePolicy().hasHeightForWidth());
         CurrentPosSpinBox->setSizePolicy(sizePolicy1);
         CurrentPosSpinBox->setFont(font1);
-        CurrentPosSpinBox->setMaximum(4095);
+        CurrentPosSpinBox->setMinimum(-13684);
+        CurrentPosSpinBox->setMaximum(13684);
 
         horizontalLayout_2->addWidget(CurrentPosSpinBox);
 

@@ -1,18 +1,19 @@
 <RCC>
-  <qresource prefix="/">
-    <file>icons/setting.ico</file>
-    <file>icons/robot_arm.png</file>
-    <file>icons/start.ico</file>
-    <file>icons/stop.ico</file>
-    <file>icons/goalpos.ico</file>
-    <file>icons/loc.ico</file>
-    <file>icons/joint.ico</file>
-    <file>icons/about.ico</file>
-    <file>icons/zs.jpg</file>
-    <file>icons/settings2.ico</file>
-    <file>icons/tools.ico</file>
-    <file>icons/planning.ico</file>
-    <file>icons/file.ico</file>
-    <file>icons/switcher.ico</file>
-  </qresource>
+    <qresource prefix="/">
+        <file>icons/setting.ico</file>
+        <file>icons/robot_arm.png</file>
+        <file>icons/start.ico</file>
+        <file>icons/stop.ico</file>
+        <file>icons/goalpos.ico</file>
+        <file>icons/loc.ico</file>
+        <file>icons/joint.ico</file>
+        <file>icons/about.ico</file>
+        <file>icons/zs.jpg</file>
+        <file>icons/settings2.ico</file>
+        <file>icons/tools.ico</file>
+        <file>icons/planning.ico</file>
+        <file>icons/file.ico</file>
+        <file>icons/switcher.ico</file>
+        <file>icons/refresh.ico</file>
+    </qresource>
 </RCC>

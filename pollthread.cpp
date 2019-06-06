@@ -1,7 +1,5 @@
 #include "pollthread.h"
 
-QMutex mutex;
-
 PollThread::PollThread(QObject *parent)
 	: QThread(parent), bStop(false)
 {
@@ -16,11 +14,9 @@ void PollThread::run()
 {
 	while (!bStop)
 	{
-		mutex.lock();
-		for (int i = 0; i < 1; i++) {
+		for (int i = 0; i < JOINT_NUM; i++) {
 			GlobalVar::Joints[i]->GetCurrentPosition();
 		}
-		mutex.unlock();
 		emit DataReady();
 		msleep(50);
 	}

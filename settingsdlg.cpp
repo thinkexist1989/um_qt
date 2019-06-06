@@ -15,7 +15,7 @@ SettingsDlg::SettingsDlg(QWidget *parent)
 		//ui.infoBrowser->append("systemlocation " + qspinfo.serialNumber());
 	}
 	ui.portNameBox->setCurrentIndex(0);
-	m_portName = ui.portNameBox->currentText();
+	//m_portName = ui.portNameBox->currentText();
 
 	serialCtrl.addButton(ui.startBtn, 1);
 	serialCtrl.addButton(ui.stopBtn, 0);
@@ -24,6 +24,21 @@ SettingsDlg::SettingsDlg(QWidget *parent)
 
 SettingsDlg::~SettingsDlg()
 {
+}
+
+void SettingsDlg::on_refreshBtn_clicked()
+{
+	foreach(const QSerialPortInfo &qspinfo, QSerialPortInfo::availablePorts()) {
+		ui.portNameBox->addItem(qspinfo.portName());
+		ui.infoBrowser->append("Found Serial Port:");
+		ui.infoBrowser->append("   portname -> " + qspinfo.portName());
+		ui.infoBrowser->append("   description -> " + qspinfo.description());
+		ui.infoBrowser->append("   manufacture -> " + qspinfo.manufacturer());
+		//ui.infoBrowser->append("serialnumber   " + qspinfo.serialNumber());
+		//ui.infoBrowser->append("systemlocation " + qspinfo.serialNumber());
+	}
+	ui.portNameBox->setCurrentIndex(0);
+	//m_portName = ui.portNameBox->currentText();
 }
 
 void SettingsDlg::onSerialCtrl(int id)

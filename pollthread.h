@@ -1,10 +1,10 @@
 #pragma once
+#ifndef POLLTHREAD_H
+#define POLLTHREAD_H
 
 #include <QThread>
 #include <QMutex>
 #include "globalvar.h"
-
-extern QMutex mutex;
 
 class PollThread : public QThread
 {
@@ -23,3 +23,7 @@ protected:
 signals:
 	void DataReady();
 };
+
+
+#endif // !POLLTHREAD_H
+

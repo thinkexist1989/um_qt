@@ -1,6 +1,7 @@
 #include "teachdlg.h"
 #include "mainwindow.h"
 #include <string>
+#include <qmath.h>
 
 TeachDlg::TeachDlg(QWidget *parent)
 	: QDialog(parent)
@@ -20,6 +21,18 @@ void TeachDlg::SetStatusMsg(QString msg)
 void TeachDlg::on_startBtn_clicked()
 {
 	SetStatusMsg("Start Teaching Programming");
+
+	timer = new QTimer(this);
+	connect(timer, SIGNAL(timeout()), this, SLOT(handle_timeout()));
+	timer->start(100);
+	time.start();
+
+}
+
+void TeachDlg::handle_timeout()
+{
+	int temp = qSin(time.elapsed() / 1000.0) * 1000;
+	GlobalVar::Joint1->SetGoalPostion(temp);
 }
 
 void TeachDlg::on_csvBtn_clicked()

@@ -20,4 +20,6 @@ public slots:
 	void on_SetPosBtn_3_clicked();
 	void on_SetPosBtn_4_clicked();
 	void on_SetPosBtn_5_clicked();
+
+	void show_current_positions();
 };

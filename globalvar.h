@@ -1,4 +1,7 @@
 #pragma once
+#ifndef GLOBALVAR_H
+#define GLOBALVAR_H
+
 #include "jointcontrol.h"
 
 #define ID_1	1
@@ -6,6 +9,8 @@
 #define ID_3	3
 #define ID_4	4
 #define ID_5	5
+
+#define JOINT_NUM 1
 
 class GlobalVar
 {
@@ -22,3 +27,5 @@ public:
 	static JointControl*  Joints[5];
 };
 
+
+#endif // !GLOBALVAR_H

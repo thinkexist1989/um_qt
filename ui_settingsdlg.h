@@ -26,12 +26,13 @@ class Ui_SettingsDlg
 public:
     QGridLayout *gridLayout;
     QGridLayout *gridLayout_4;
-    QLabel *label_4;
-    QComboBox *portNameBox;
-    QLabel *label_5;
-    QComboBox *baudBox;
     QPushButton *startBtn;
+    QComboBox *portNameBox;
+    QComboBox *baudBox;
     QPushButton *stopBtn;
+    QLabel *label_5;
+    QLabel *label_4;
+    QPushButton *refreshBtn;
     QTextBrowser *infoBrowser;
 
     void setupUi(QDialog *SettingsDlg)
@@ -46,22 +47,27 @@ public:
         gridLayout_4 = new QGridLayout();
         gridLayout_4->setSpacing(6);
         gridLayout_4->setObjectName(QString::fromUtf8("gridLayout_4"));
-        label_4 = new QLabel(SettingsDlg);
-        label_4->setObjectName(QString::fromUtf8("label_4"));
+        startBtn = new QPushButton(SettingsDlg);
+        startBtn->setObjectName(QString::fromUtf8("startBtn"));
+        QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(startBtn->sizePolicy().hasHeightForWidth());
+        startBtn->setSizePolicy(sizePolicy);
         QFont font;
         font.setFamily(QString::fromUtf8("Times New Roman"));
         font.setPointSize(12);
         font.setBold(true);
         font.setWeight(75);
-        label_4->setFont(font);
+        startBtn->setFont(font);
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/icons/start.ico"), QSize(), QIcon::Normal, QIcon::Off);
+        startBtn->setIcon(icon);
 
-        gridLayout_4->addWidget(label_4, 0, 0, 1, 1);
+        gridLayout_4->addWidget(startBtn, 0, 3, 2, 1);
 
         portNameBox = new QComboBox(SettingsDlg);
         portNameBox->setObjectName(QString::fromUtf8("portNameBox"));
-        QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(portNameBox->sizePolicy().hasHeightForWidth());
         portNameBox->setSizePolicy(sizePolicy);
         QFont font1;
@@ -72,12 +78,6 @@ public:
         portNameBox->setFont(font1);
 
         gridLayout_4->addWidget(portNameBox, 1, 0, 1, 1);
-
-        label_5 = new QLabel(SettingsDlg);
-        label_5->setObjectName(QString::fromUtf8("label_5"));
-        label_5->setFont(font);
-
-        gridLayout_4->addWidget(label_5, 0, 1, 1, 1);
 
         baudBox = new QComboBox(SettingsDlg);
         baudBox->addItem(QString());
@@ -94,17 +94,6 @@ public:
 
         gridLayout_4->addWidget(baudBox, 1, 1, 1, 1);
 
-        startBtn = new QPushButton(SettingsDlg);
-        startBtn->setObjectName(QString::fromUtf8("startBtn"));
-        sizePolicy.setHeightForWidth(startBtn->sizePolicy().hasHeightForWidth());
-        startBtn->setSizePolicy(sizePolicy);
-        startBtn->setFont(font);
-        QIcon icon;
-        icon.addFile(QString::fromUtf8(":/icons/start.ico"), QSize(), QIcon::Normal, QIcon::Off);
-        startBtn->setIcon(icon);
-
-        gridLayout_4->addWidget(startBtn, 0, 2, 2, 1);
-
         stopBtn = new QPushButton(SettingsDlg);
         stopBtn->setObjectName(QString::fromUtf8("stopBtn"));
         sizePolicy.setHeightForWidth(stopBtn->sizePolicy().hasHeightForWidth());
@@ -114,12 +103,39 @@ public:
         icon1.addFile(QString::fromUtf8(":/icons/stop.ico"), QSize(), QIcon::Normal, QIcon::Off);
         stopBtn->setIcon(icon1);
 
-        gridLayout_4->addWidget(stopBtn, 0, 3, 2, 1);
+        gridLayout_4->addWidget(stopBtn, 0, 4, 2, 1);
 
-        gridLayout_4->setColumnStretch(0, 2);
-        gridLayout_4->setColumnStretch(1, 2);
+        label_5 = new QLabel(SettingsDlg);
+        label_5->setObjectName(QString::fromUtf8("label_5"));
+        label_5->setFont(font);
+
+        gridLayout_4->addWidget(label_5, 0, 1, 1, 1);
+
+        label_4 = new QLabel(SettingsDlg);
+        label_4->setObjectName(QString::fromUtf8("label_4"));
+        label_4->setFont(font);
+
+        gridLayout_4->addWidget(label_4, 0, 0, 1, 1);
+
+        refreshBtn = new QPushButton(SettingsDlg);
+        refreshBtn->setObjectName(QString::fromUtf8("refreshBtn"));
+        QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::Expanding);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(refreshBtn->sizePolicy().hasHeightForWidth());
+        refreshBtn->setSizePolicy(sizePolicy1);
+        QIcon icon2;
+        icon2.addFile(QString::fromUtf8(":/icons/refresh.ico"), QSize(), QIcon::Normal, QIcon::Off);
+        refreshBtn->setIcon(icon2);
+        refreshBtn->setIconSize(QSize(20, 20));
+
+        gridLayout_4->addWidget(refreshBtn, 0, 2, 2, 1);
+
+        gridLayout_4->setColumnStretch(0, 3);
+        gridLayout_4->setColumnStretch(1, 3);
         gridLayout_4->setColumnStretch(2, 1);
-        gridLayout_4->setColumnStretch(3, 1);
+        gridLayout_4->setColumnStretch(3, 2);
+        gridLayout_4->setColumnStretch(4, 2);
 
         gridLayout->addLayout(gridLayout_4, 0, 0, 1, 1);
 
@@ -143,8 +159,7 @@ public:
     void retranslateUi(QDialog *SettingsDlg)
     {
         SettingsDlg->setWindowTitle(QApplication::translate("SettingsDlg", "Serial Port Settings", nullptr));
-        label_4->setText(QApplication::translate("SettingsDlg", "PORT NAME", nullptr));
-        label_5->setText(QApplication::translate("SettingsDlg", "BAUDRATE", nullptr));
+        startBtn->setText(QApplication::translate("SettingsDlg", "START", nullptr));
         baudBox->setItemText(0, QApplication::translate("SettingsDlg", "9600", nullptr));
         baudBox->setItemText(1, QApplication::translate("SettingsDlg", "57600", nullptr));
         baudBox->setItemText(2, QApplication::translate("SettingsDlg", "115200", nullptr));
@@ -154,8 +169,10 @@ public:
         baudBox->setItemText(6, QApplication::translate("SettingsDlg", "4000000", nullptr));
 
         baudBox->setCurrentText(QApplication::translate("SettingsDlg", "1000000", nullptr));
-        startBtn->setText(QApplication::translate("SettingsDlg", "START", nullptr));
         stopBtn->setText(QApplication::translate("SettingsDlg", "STOP", nullptr));
+        label_5->setText(QApplication::translate("SettingsDlg", "BAUDRATE", nullptr));
+        label_4->setText(QApplication::translate("SettingsDlg", "PORT NAME", nullptr));
+        refreshBtn->setText(QString());
     } // retranslateUi
 
 };

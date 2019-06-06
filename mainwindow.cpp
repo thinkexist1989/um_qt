@@ -6,6 +6,8 @@
 #include <qmessagebox.h>
 #include <qtimer.h>
 
+PollThread *m_pthread = new PollThread(nullptr);
+
 MainWindow::MainWindow(QWidget *parent) :
 	QMainWindow(parent),
 	ui(new Ui::MainWindow)
@@ -26,7 +28,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
 	glwnd->load_stl("fstl\\gl\\um_stl\\all.STL");
 
-	m_pthread = new PollThread(NULL);
+	//m_pthread = new PollThread(NULL);
 
 	m_pthread->start(); //Ïß³ÌÆô¶¯
 

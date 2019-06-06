@@ -144,8 +144,11 @@
             <bold>true</bold>
            </font>
           </property>
+          <property name="minimum">
+           <number>-13684</number>
+          </property>
           <property name="maximum">
-           <number>4095</number>
+           <number>13684</number>
           </property>
          </widget>
         </item>

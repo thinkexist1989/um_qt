@@ -5,6 +5,9 @@
 #include "dynamixel_sdk.h"
 #include <qstring.h>
 #include <string.h>
+#include <QMutex>
+
+extern QMutex mutex;
 
 // Control table address
 #define ADDR_PRO_TORQUE_ENABLE          64                 // Control table address is different in Dynamixel model
@@ -18,6 +21,9 @@
 #define ADDR_PRO_POSITION_D_GAIN		80
 #define ADDR_PRO_POSITION_I_GAIN		82
 #define ADDR_PRO_POSITION_P_GAIN		84
+
+#define ADDR_PRO_MIN_POSITION_LIMIT		52
+#define ADDR_PRO_MAX_POSITION_LIMIT		48
 
 // Protocol version
 #define PROTOCOL_VERSION                2.0                 // See which protocol version is used in the Dynamixel
@@ -38,10 +44,10 @@
 
 
 // Operating Mode
-#define CURRENT 0x00
-#define VELOCITY 0x01
-#define POSITION 0x03
-#define EXT_POSITION 0x04
+#define MODE_CURRENT 0x00
+#define MODE_VELOCITY 0x01
+#define MODE_POSITION 0x03
+#define MODE_EXT_POSITION 0x04
 //LED status
 #define LED_ON 0x01
 #define LED_OFF 0x00
@@ -63,11 +69,12 @@ public:
 	static bool SetBaudRate(int baud);
 
 	int m_CurrentPosition; //当前位置
+	uint8_t m_mode; //当前模式
+
 	int m_P_gain; //P增益
 	int m_I_gain; //I增益
 	int m_D_gain; //D增益
 
-private:
 	int m_ID;
 	int m_minPosVal;
 	int m_maxPosVal;
@@ -76,7 +83,22 @@ private:
 	dynamixel::PacketHandler *packetHandler; //数据包句柄
 public:
 	int SetOperatingMode(uint8_t mode); //设置操作模式 位置/扩展位置
+	int GetOperationMode();
+	int GetOperationMode(uint8_t& mode);
+
+	int SetMinPositionLimit(uint32_t min);
+	int GetMinPositionLimit(uint32_t& min);//未实现
+	int GetMinPositionLimit();
+
+	int SetMaxPositionLimit(uint32_t max);
+	int GetMaxPositionLimit(uint32_t& max);//未实现
+	int GetMaxPositionLimit();
+
 	int SetPositionPID(uint16_t P_gain, uint16_t I_gain, uint16_t D_gain);
+	int GetPositionPID();
+	int GetPositionPID(uint16_t& P_gain, uint16_t& I_gain, uint16_t& D_gain); //未实现
+
+
 	int SetLED(uint16_t status);
 	int EnableJointTorque();
 	int SetGoalPostion(int goal);

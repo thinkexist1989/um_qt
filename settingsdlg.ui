@@ -15,9 +15,15 @@
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
-    <layout class="QGridLayout" name="gridLayout_4" columnstretch="2,2,1,1">
-     <item row="0" column="0">
-      <widget class="QLabel" name="label_4">
+    <layout class="QGridLayout" name="gridLayout_4" columnstretch="3,3,1,2,2">
+     <item row="0" column="3" rowspan="2">
+      <widget class="QPushButton" name="startBtn">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="font">
         <font>
          <family>Times New Roman</family>
@@ -27,7 +33,11 @@
         </font>
        </property>
        <property name="text">
-        <string>PORT NAME</string>
+        <string>START</string>
+       </property>
+       <property name="icon">
+        <iconset resource="Resource.qrc">
+         <normaloff>:/icons/start.ico</normaloff>:/icons/start.ico</iconset>
        </property>
       </widget>
      </item>
@@ -46,21 +56,6 @@
          <weight>50</weight>
          <bold>false</bold>
         </font>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="1">
-      <widget class="QLabel" name="label_5">
-       <property name="font">
-        <font>
-         <family>Times New Roman</family>
-         <pointsize>12</pointsize>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>BAUDRATE</string>
        </property>
       </widget>
      </item>
@@ -123,32 +118,7 @@
        </item>
       </widget>
      </item>
-     <item row="0" column="2" rowspan="2">
-      <widget class="QPushButton" name="startBtn">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="font">
-        <font>
-         <family>Times New Roman</family>
-         <pointsize>12</pointsize>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>START</string>
-       </property>
-       <property name="icon">
-        <iconset resource="Resource.qrc">
-         <normaloff>:/icons/start.ico</normaloff>:/icons/start.ico</iconset>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="3" rowspan="2">
+     <item row="0" column="4" rowspan="2">
       <widget class="QPushButton" name="stopBtn">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -170,6 +140,59 @@
        <property name="icon">
         <iconset resource="Resource.qrc">
          <normaloff>:/icons/stop.ico</normaloff>:/icons/stop.ico</iconset>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLabel" name="label_5">
+       <property name="font">
+        <font>
+         <family>Times New Roman</family>
+         <pointsize>12</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>BAUDRATE</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_4">
+       <property name="font">
+        <font>
+         <family>Times New Roman</family>
+         <pointsize>12</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>PORT NAME</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2" rowspan="2">
+      <widget class="QPushButton" name="refreshBtn">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="Resource.qrc">
+         <normaloff>:/icons/refresh.ico</normaloff>:/icons/refresh.ico</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>20</width>
+         <height>20</height>
+        </size>
        </property>
       </widget>
      </item>
