@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "settingsdlg.h"
+#include "switchmodedlg.h"
 #include "singlejointcontrldlg.h"
 #include "teachdlg.h"
 #include "aboutdlg.h"
@@ -13,6 +14,8 @@
 #include "globalvar.h"
 
 #include "window.h"
+
+#include "pollthread.h"
 
 namespace Ui {
 	class MainWindow;
@@ -40,6 +43,9 @@ public:
 	SingleJointContrlDlg *m_pSJCdlg;
 	TeachDlg *m_teachdlg;
 	AboutDlg *m_aboutdlg;
+	SwitchModeDlg *m_smdlg;
+
+	PollThread *m_pthread;
 
 	Window* glwnd;
 
@@ -55,6 +61,7 @@ public slots:
 	void on_actionSingleJointControl_triggered();
 	void on_actionAbout_triggered();
 	void on_actionTeach_triggered();
+	void on_actionMode_triggered();
 };
 
 #endif // MAINWINDOW_H

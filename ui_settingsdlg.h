@@ -64,7 +64,12 @@ public:
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(portNameBox->sizePolicy().hasHeightForWidth());
         portNameBox->setSizePolicy(sizePolicy);
-        portNameBox->setFont(font);
+        QFont font1;
+        font1.setFamily(QString::fromUtf8("Times New Roman"));
+        font1.setPointSize(12);
+        font1.setBold(false);
+        font1.setWeight(50);
+        portNameBox->setFont(font1);
 
         gridLayout_4->addWidget(portNameBox, 1, 0, 1, 1);
 
@@ -79,10 +84,13 @@ public:
         baudBox->addItem(QString());
         baudBox->addItem(QString());
         baudBox->addItem(QString());
+        baudBox->addItem(QString());
+        baudBox->addItem(QString());
+        baudBox->addItem(QString());
         baudBox->setObjectName(QString::fromUtf8("baudBox"));
         sizePolicy.setHeightForWidth(baudBox->sizePolicy().hasHeightForWidth());
         baudBox->setSizePolicy(sizePolicy);
-        baudBox->setFont(font);
+        baudBox->setFont(font1);
 
         gridLayout_4->addWidget(baudBox, 1, 1, 1, 1);
 
@@ -117,16 +125,16 @@ public:
 
         infoBrowser = new QTextBrowser(SettingsDlg);
         infoBrowser->setObjectName(QString::fromUtf8("infoBrowser"));
-        QFont font1;
-        font1.setFamily(QString::fromUtf8("Times New Roman"));
-        infoBrowser->setFont(font1);
+        QFont font2;
+        font2.setFamily(QString::fromUtf8("Times New Roman"));
+        infoBrowser->setFont(font2);
 
         gridLayout->addWidget(infoBrowser, 1, 0, 1, 1);
 
 
         retranslateUi(SettingsDlg);
 
-        baudBox->setCurrentIndex(2);
+        baudBox->setCurrentIndex(3);
 
 
         QMetaObject::connectSlotsByName(SettingsDlg);
@@ -138,10 +146,14 @@ public:
         label_4->setText(QApplication::translate("SettingsDlg", "PORT NAME", nullptr));
         label_5->setText(QApplication::translate("SettingsDlg", "BAUDRATE", nullptr));
         baudBox->setItemText(0, QApplication::translate("SettingsDlg", "9600", nullptr));
-        baudBox->setItemText(1, QApplication::translate("SettingsDlg", "19200", nullptr));
-        baudBox->setItemText(2, QApplication::translate("SettingsDlg", "57600", nullptr));
-        baudBox->setItemText(3, QApplication::translate("SettingsDlg", "115200", nullptr));
+        baudBox->setItemText(1, QApplication::translate("SettingsDlg", "57600", nullptr));
+        baudBox->setItemText(2, QApplication::translate("SettingsDlg", "115200", nullptr));
+        baudBox->setItemText(3, QApplication::translate("SettingsDlg", "1000000", nullptr));
+        baudBox->setItemText(4, QApplication::translate("SettingsDlg", "2000000", nullptr));
+        baudBox->setItemText(5, QApplication::translate("SettingsDlg", "3000000", nullptr));
+        baudBox->setItemText(6, QApplication::translate("SettingsDlg", "4000000", nullptr));
 
+        baudBox->setCurrentText(QApplication::translate("SettingsDlg", "1000000", nullptr));
         startBtn->setText(QApplication::translate("SettingsDlg", "START", nullptr));
         stopBtn->setText(QApplication::translate("SettingsDlg", "STOP", nullptr));
     } // retranslateUi

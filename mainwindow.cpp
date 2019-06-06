@@ -13,6 +13,7 @@ MainWindow::MainWindow(QWidget *parent) :
 	ui->setupUi(this);
 
 	m_psettingsdlg = new SettingsDlg(this); //初始化设置对话框
+	m_smdlg = new SwitchModeDlg(this);// 初始化模式设置对话框
 	m_pSJCdlg = new SingleJointContrlDlg(this); //初始化单关节控制对话框
 	m_teachdlg = new TeachDlg(this);
 	m_aboutdlg = new AboutDlg(this);
@@ -24,19 +25,27 @@ MainWindow::MainWindow(QWidget *parent) :
 	ui->glLayout->addWidget(glwnd);
 
 	glwnd->load_stl("fstl\\gl\\um_stl\\all.STL");
+
+	m_pthread = new PollThread(NULL);
+
+	m_pthread->start(); //线程启动
+
 	//glwnd->load_stl("all.STL");
-	QTimer *timer = new QTimer(this);
-	connect(timer, SIGNAL(timeout()), this, SLOT(handle_time_out()));
-	isUsed = false;
-	timer->start(100);
+	//QTimer *timer = new QTimer(this);
+	//connect(timer, SIGNAL(timeout()), this, SLOT(handle_time_out()));
+	//isUsed = false;
+	//timer->start(100);
 
 	//statusBar()->setVisible(false);
+	connect(m_pthread, SIGNAL(DataReady()), this, SLOT(handle_time_out()));
 
 }
 
 MainWindow::~MainWindow()
 {
+	m_pthread->bStop = true; //必须退出thread循环，否则报错
 	delete ui;
+
 }
 
 void MainWindow::on_SetPosBtn_clicked()
@@ -54,8 +63,8 @@ void MainWindow::SetStatusMsg(QString msg)
 
 void MainWindow::handle_time_out()
 {
-	GlobalVar::Joint1->GetCurrentPosition(&dxl_present_position);
-	ui->CurrentPosSpinBox->setValue(dxl_present_position);
+	//GlobalVar::Joint1->GetCurrentPosition(&dxl_present_position);
+	ui->CurrentPosSpinBox->setValue(GlobalVar::Joint1->m_CurrentPosition);
 }
 
 void MainWindow::on_actionSettings_triggered()
@@ -82,4 +91,10 @@ void MainWindow::on_actionTeach_triggered()
 {
 	SetStatusMsg("Open Teach Programming Dialog");
 	m_teachdlg->show();
+}
+
+void MainWindow::on_actionMode_triggered()
+{
+	SetStatusMsg("Switch Dynamixel Mode Dialog");
+	m_smdlg->show();
 }

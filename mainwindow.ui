@@ -262,6 +262,8 @@
    </attribute>
    <addaction name="actionSettings"/>
    <addaction name="separator"/>
+   <addaction name="actionMode"/>
+   <addaction name="separator"/>
    <addaction name="actionSingleJointControl"/>
    <addaction name="separator"/>
    <addaction name="actionTeach"/>
@@ -319,6 +321,18 @@
    </property>
    <property name="toolTip">
     <string>Teach Programming</string>
+   </property>
+  </action>
+  <action name="actionMode">
+   <property name="icon">
+    <iconset resource="Resource.qrc">
+     <normaloff>:/icons/switcher.ico</normaloff>:/icons/switcher.ico</iconset>
+   </property>
+   <property name="text">
+    <string>MODE</string>
+   </property>
+   <property name="toolTip">
+    <string>Switch Dynamixel Mode</string>
    </property>
   </action>
  </widget>

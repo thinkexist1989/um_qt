@@ -29,7 +29,7 @@ SettingsDlg::~SettingsDlg()
 void SettingsDlg::onSerialCtrl(int id)
 {
 	if (id == 1) {
-		if (JointControl::OpenPort(m_portName)) {
+		if (JointControl::OpenPort(ui.portNameBox->currentText())) {
 			ui.infoBrowser->append("[INFO]Succeed to open serial port");
 		}
 		else {

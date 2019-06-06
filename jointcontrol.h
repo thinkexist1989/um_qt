@@ -8,10 +8,16 @@
 
 // Control table address
 #define ADDR_PRO_TORQUE_ENABLE          64                 // Control table address is different in Dynamixel model
+#define ADDR_PRO_LED					65
+
 #define ADDR_PRO_GOAL_POSITION          116
 #define ADDR_PRO_PRESENT_POSITION       132
 
 #define ADDR_PRO_OPERATING_MODE			11
+
+#define ADDR_PRO_POSITION_D_GAIN		80
+#define ADDR_PRO_POSITION_I_GAIN		82
+#define ADDR_PRO_POSITION_P_GAIN		84
 
 // Protocol version
 #define PROTOCOL_VERSION                2.0                 // See which protocol version is used in the Dynamixel
@@ -36,6 +42,9 @@
 #define VELOCITY 0x01
 #define POSITION 0x03
 #define EXT_POSITION 0x04
+//LED status
+#define LED_ON 0x01
+#define LED_OFF 0x00
 
 
 
@@ -53,6 +62,11 @@ public:
 	static bool bBaudOK;
 	static bool SetBaudRate(int baud);
 
+	int m_CurrentPosition; //当前位置
+	int m_P_gain; //P增益
+	int m_I_gain; //I增益
+	int m_D_gain; //D增益
+
 private:
 	int m_ID;
 	int m_minPosVal;
@@ -61,12 +75,15 @@ private:
 	uint8_t m_dxl_error;     // Dynamixel error
 	dynamixel::PacketHandler *packetHandler; //数据包句柄
 public:
-	int SetOperatingMode(uint8_t mode);
+	int SetOperatingMode(uint8_t mode); //设置操作模式 位置/扩展位置
+	int SetPositionPID(uint16_t P_gain, uint16_t I_gain, uint16_t D_gain);
+	int SetLED(uint16_t status);
 	int EnableJointTorque();
 	int SetGoalPostion(int goal);
-	int GetCurrentPosition(int* pCurrentPos);
-	const char* GetErrorMsg(uint8_t error);
-	const char* GetResMsg(int res);
+	int GetCurrentPosition(int& CurrentPos);
+	int GetCurrentPosition();
+	const char* GetErrorMsg(uint8_t& error);
+	const char* GetResMsg(int& res);
 
 };
 

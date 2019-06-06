@@ -13,5 +13,6 @@
     <file>icons/tools.ico</file>
     <file>icons/planning.ico</file>
     <file>icons/file.ico</file>
+    <file>icons/switcher.ico</file>
   </qresource>
 </RCC>

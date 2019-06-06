@@ -32,6 +32,7 @@ public:
     QAction *actionSingleJointControl;
     QAction *actionAbout;
     QAction *actionTeach;
+    QAction *actionMode;
     QWidget *centralWidget;
     QGridLayout *gridLayout;
     QHBoxLayout *horizontalLayout_4;
@@ -54,7 +55,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(693, 520);
+        MainWindow->resize(694, 519);
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/icons/robot_arm.png"), QSize(), QIcon::Normal, QIcon::Off);
         MainWindow->setWindowIcon(icon);
@@ -87,6 +88,11 @@ public:
         icon4.addFile(QString::fromUtf8(":/icons/planning.ico"), QSize(), QIcon::Normal, QIcon::Off);
         icon4.addFile(QString::fromUtf8(":/icons/planning.ico"), QSize(), QIcon::Normal, QIcon::On);
         actionTeach->setIcon(icon4);
+        actionMode = new QAction(MainWindow);
+        actionMode->setObjectName(QString::fromUtf8("actionMode"));
+        QIcon icon5;
+        icon5.addFile(QString::fromUtf8(":/icons/switcher.ico"), QSize(), QIcon::Normal, QIcon::Off);
+        actionMode->setIcon(icon5);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         gridLayout = new QGridLayout(centralWidget);
@@ -203,9 +209,9 @@ public:
         sizePolicy.setHeightForWidth(SetPosBtn->sizePolicy().hasHeightForWidth());
         SetPosBtn->setSizePolicy(sizePolicy);
         SetPosBtn->setFont(font1);
-        QIcon icon5;
-        icon5.addFile(QString::fromUtf8(":/icons/goalpos.ico"), QSize(), QIcon::Normal, QIcon::Off);
-        SetPosBtn->setIcon(icon5);
+        QIcon icon6;
+        icon6.addFile(QString::fromUtf8(":/icons/goalpos.ico"), QSize(), QIcon::Normal, QIcon::Off);
+        SetPosBtn->setIcon(icon6);
         SetPosBtn->setIconSize(QSize(30, 30));
 
         horizontalLayout->addWidget(SetPosBtn);
@@ -237,6 +243,8 @@ public:
 
         mainToolBar->addAction(actionSettings);
         mainToolBar->addSeparator();
+        mainToolBar->addAction(actionMode);
+        mainToolBar->addSeparator();
         mainToolBar->addAction(actionSingleJointControl);
         mainToolBar->addSeparator();
         mainToolBar->addAction(actionTeach);
@@ -266,6 +274,10 @@ public:
         actionTeach->setText(QApplication::translate("MainWindow", "START", nullptr));
 #ifndef QT_NO_TOOLTIP
         actionTeach->setToolTip(QApplication::translate("MainWindow", "Teach Programming", nullptr));
+#endif // QT_NO_TOOLTIP
+        actionMode->setText(QApplication::translate("MainWindow", "MODE", nullptr));
+#ifndef QT_NO_TOOLTIP
+        actionMode->setToolTip(QApplication::translate("MainWindow", "Switch Dynamixel Mode", nullptr));
 #endif // QT_NO_TOOLTIP
         label_4->setText(QApplication::translate("MainWindow", "JOINT", nullptr));
         label_2->setText(QApplication::translate("MainWindow", "ID", nullptr));

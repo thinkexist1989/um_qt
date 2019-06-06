@@ -84,6 +84,12 @@
     <ClCompile Include="teachdlg.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="switchmodedlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pollthread.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="mainwindow.h">
@@ -108,6 +114,12 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="teachdlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="switchmodedlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="pollthread.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
@@ -136,6 +148,9 @@
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="teachdlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="switchmodedlg.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>

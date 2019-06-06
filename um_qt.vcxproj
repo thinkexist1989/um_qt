@@ -212,8 +212,10 @@
     <ClCompile Include="jointcontrol.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mainwindow.cpp" />
+    <ClCompile Include="pollthread.cpp" />
     <ClCompile Include="settingsdlg.cpp" />
     <ClCompile Include="singlejointcontrldlg.cpp" />
+    <ClCompile Include="switchmodedlg.cpp" />
     <ClCompile Include="teachdlg.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -273,6 +275,14 @@
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\$(ConfigurationName);.\GeneratedFiles;.;$(QTDIR)\include;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtCore;.\debug;C:\VulkanSDK\1.0.51.0\include;$(QTDIR)\mkspecs\win32-msvc;$(ProjectDir)\DynamixelSDK\include\dynamixel_sdk;$(QTDIR)\include\QtSerialPort;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtOpenGLExtensions</IncludePath>
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\$(ConfigurationName);.\GeneratedFiles;.;$(QTDIR)\include;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtCore;.\release;C:\VulkanSDK\1.0.51.0\include;$(QTDIR)\mkspecs\win32-msvc;$(ProjectDir)\DynamixelSDK\include\dynamixel_sdk;$(QTDIR)\include\QtSerialPort;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtOpenGLExtensions</IncludePath>
     </QtMoc>
+    <QtMoc Include="switchmodedlg.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\$(ConfigurationName);.\GeneratedFiles;.;$(QTDIR)\include;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtCore;.\debug;C:\VulkanSDK\1.0.51.0\include;$(QTDIR)\mkspecs\win32-msvc;$(ProjectDir)\DynamixelSDK\include\dynamixel_sdk;$(QTDIR)\include\QtSerialPort;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtOpenGLExtensions</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\$(ConfigurationName);.\GeneratedFiles;.;$(QTDIR)\include;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtCore;.\release;C:\VulkanSDK\1.0.51.0\include;$(QTDIR)\mkspecs\win32-msvc;$(ProjectDir)\DynamixelSDK\include\dynamixel_sdk;$(QTDIR)\include\QtSerialPort;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtOpenGLExtensions</IncludePath>
+    </QtMoc>
+    <QtMoc Include="pollthread.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\$(ConfigurationName);.\GeneratedFiles;.;$(QTDIR)\include;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtCore;.\debug;C:\VulkanSDK\1.0.51.0\include;$(QTDIR)\mkspecs\win32-msvc;$(ProjectDir)\DynamixelSDK\include\dynamixel_sdk;$(QTDIR)\include\QtSerialPort;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtOpenGLExtensions</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\$(ConfigurationName);.\GeneratedFiles;.;$(QTDIR)\include;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtCore;.\release;C:\VulkanSDK\1.0.51.0\include;$(QTDIR)\mkspecs\win32-msvc;$(ProjectDir)\DynamixelSDK\include\dynamixel_sdk;$(QTDIR)\include\QtSerialPort;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtOpenGLExtensions</IncludePath>
+    </QtMoc>
     <ClInclude Include="ui_mainwindow.h" />
   </ItemGroup>
   <ItemGroup>
@@ -287,6 +297,10 @@
       <OutputFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\ui_%(Filename).h</OutputFile>
     </QtUic>
     <QtUic Include="singlejointcontrldlg.ui">
+      <OutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\ui_%(Filename).h</OutputFile>
+      <OutputFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\ui_%(Filename).h</OutputFile>
+    </QtUic>
+    <QtUic Include="switchmodedlg.ui">
       <OutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\ui_%(Filename).h</OutputFile>
       <OutputFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\ui_%(Filename).h</OutputFile>
     </QtUic>
